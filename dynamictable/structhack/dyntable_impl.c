@@ -17,7 +17,7 @@ void print_array(int array[], int size)
 {
         printf("\n");
 
-        for(int i = 0; i< size; i++)
+        for(int i = 0; i < size; i++)
                 printf("  %d",array[i]);
 
         printf("\n");
@@ -56,9 +56,10 @@ void push_back(void **dyntable, int element)
 
 /*
  * Pops element from the end of dynamic table.
- * If the load factor of the dynamic table drops below the threshold
- * of 0.25, then the dynamic table must be shrunk by 0.25 times its
- * initial size, and then increased by 1.5 times the new size.
+ * If the load factor of the dynamic table becomes equal to, or 
+ * drops below the threshold of 0.25, then the dynamic table must 
+ * be shrunk by 0.25 times its * initial size, and then increased 
+ * by 1.5 times the new size.
  * @dyntable:   double pointer to the dynamic table
  */
 void pop_back(void **dyntable)
@@ -66,7 +67,7 @@ void pop_back(void **dyntable)
         struct dyntable* dt_temp = (struct dyntable*) *dyntable;
         printf("\npop_back");
         /*
-         *      Dynamic table is empty. pop_back operation is invalid.
+         * Dynamic table is empty. pop_back operation is invalid.
          */ 
         if(!dt_temp->count){
                 printf("\n pop_back is invalid. all elements have been exhausted.\n");
@@ -76,9 +77,10 @@ void pop_back(void **dyntable)
         float load_factor = ((float)(--dt_temp->count))/((float)dt_temp->size);
 
         /*
-         *      Load factor of the dynamic table has decreased below threshold. Dynamic table must be resized.
+         * Load factor of the dynamic table has become less than/equal
+         * to threshold. Dynamic table must be resized.
          */
-        if(load_factor < DECREASE_FACTOR){
+        if(load_factor <= DECREASE_FACTOR){
                 int new_size = (int) ceil(dt_temp->size*DECREASE_FACTOR*INCREASE_FACTOR);
                 *dyntable = (struct dyntable*)realloc(*dyntable, sizeof(struct dyntable) + ((new_size)*sizeof(int)));
                 dt_temp = (struct dyntable*) *dyntable;
