@@ -222,11 +222,14 @@ exit:
  */
 int find(void *dictionary, int key)
 {
-        struct dictionary* dict = (struct dictionary *)dictionary;
+        struct dictionary* dict = (struct dictionary *)dictionary;        
+        struct splay_tree_node* temp = dict->root;
+
+        if(!temp)
+                return -1;
+
         if(key == dict->root->key)
                 return dict->root->value;
-        
-        struct splay_tree_node* temp = dict->root;
 
         while(temp){
 
