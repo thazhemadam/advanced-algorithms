@@ -38,7 +38,7 @@ Given a string **A** containing lowercase alphabets [a..z] of length **N**, the 
 For the given string **A**,**Q** queries are asked. Each query gives the value of **i** at which the
 splitting is to be done. <br />
 For each query, return the longest common prefix of the two splits.<br />
-The overall time complexity of the expected solution should be **O(Q*logN)**.
+The overall time complexity of the expected solution should be **O(Q*logN\*LogN)**.
 
 ### Implementation
 Concepts from Number Theory, Hashing, Rabin Karp Algorithm, and Binary search have been used.
