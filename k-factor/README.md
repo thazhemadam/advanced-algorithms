@@ -16,8 +16,9 @@ The solution has to be O(N<sup>2</sup>).
 ### Input
 First line contains a single integer T, where T is the number of test cases.<br />
 The second line contains two integers N and K.<br />
-* 1 <= N <= 200<br />
+* By default, 1 <= N <= 200. <br />
+  The upper bound for N can be defined to be a custom value using the flag ```-DMAX_N=<custom value>``` while compiling, and creating the executable.<br />
 * 1 <= T <= 10<sup>5</sup>
 
 ### Output
-Output T numbers (Number of strings of length N, with K-factor k); each number on a new line.
+Output T numbers - number of strings of length N, with K-factor k; each number on a new line.

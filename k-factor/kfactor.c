@@ -3,8 +3,10 @@
 #include <string.h>
 
 #define PRIME 1000000007
+#ifndef MAX_N
 #define MAX_N 200
-#define MAX_K 66
+#endif
+#define MAX_K MAX_N/3
 #define a 0
 #define ab 1
 #define abb 2
